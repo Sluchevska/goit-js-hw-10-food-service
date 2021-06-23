@@ -9,4 +9,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"Z6FK":[function(require,module,exports) {
 "use strict";var e=u(require("./menu.json")),n=u(require("./menuTempl.hbs"));function u(e){return e&&e.__esModule?e:{default:e}}const r=document.querySelector(".js-menu");function t(e){return e.map(n.default).join("")}r.insertAdjacentHTML("beforeend",t(e.default));
 },{"./menu.json":"mA8c","./menuTempl.hbs":"W8k1"}]},{},["Z6FK"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service/menu.3dc8e9fa.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/menu.dcab6274.js.map
