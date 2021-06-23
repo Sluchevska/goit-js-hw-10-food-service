@@ -1,35 +1,37 @@
-const labelRef = document.querySelector('#theme-switch-toggle')
+'use strict'
+
+
+const checkBoxRef = document.querySelector('#theme-switch-toggle')
 const bodyRef = document.querySelector('body')
-const checkboxRef = document.querySelector('#theme-switch-toggle')
+
 
 const Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme',
 };
-
-const lightTheme = bodyRef.classList.add('light-theme')
-
-labelRef.addEventListener('change', changeTheme)
+checkBoxRef.checked = JSON.parse(localStorage.getItem('checkbox'))
+changeTheme()
 
 function changeTheme() {
+  if (checkBoxRef.checked) {
+    bodyRef.classList.add(Theme.DARK)
+  }else if(!checkBoxRef.checked)
    
-   bodyRef.classList.toggle('dark-theme')
-    bodyRef.classList.remove('light-theme')
-     
-   onUpload()
-  
+   
+   {bodyRef.classList.remove(Theme.LIGHT)}
+    
 }
- 
-function onUpload() {
-    if (!lightTheme) {
-        localStorage.setItem('myTheme', JSON.stringify(Theme.DARK))
-        const savedTheme = localStorage.getItem('myTheme')
-        const parsedTheme = JSON.parse(savedTheme)
-    //   checkboxRef.checked=true
-    } 
+ checkBoxRef.addEventListener('change', onChange)
+function onChange (e) {
+  if(e.currentTarget.checked)
+  {
+    bodyRef.classList.add(Theme.DARK)
+    bodyRef.classList.remove(Theme.LIGHT)
+localStorage.setItem('checkbox', checkBoxRef.checked)
+  } else {
+    bodyRef.classList.add(Theme.LIGHT)
+    bodyRef.classList.remove(Theme.DARK)
+localStorage.setItem('checkbox', checkBoxRef.checked)
+  }
 }
-
-
-
-
 

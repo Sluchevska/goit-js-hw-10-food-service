@@ -7,3 +7,4 @@ function createMenu(menu) {
 }
 
 menuItemBox.insertAdjacentHTML('beforeend', createMenu(menu))
+
